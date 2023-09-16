@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "wasm-pack build wasm-module && vite build",
-    "build-for-app": "vite build --outDir ../app/www --emptyOutDir",
+    "build-for-app": "git update-index --assume-unchanged ../app/www/README.md && vite build --outDir ../app/www --emptyOutDir",
     "preview": "vite preview"
   },
   "devDependencies": {
