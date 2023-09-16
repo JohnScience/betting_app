@@ -28,6 +28,7 @@ npm run test-on-<android|ios>
 ```
 
 *TODO: add iOS target, possibly via [cordova-ios], and check if it works as intended.*
+
 *Note: testing on a mobile device takes more than a minute.*
 
 [vite]: https://vitejs.dev/
