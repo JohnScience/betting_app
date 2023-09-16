@@ -1,0 +1,20 @@
+{
+  "name": "betting_app",
+  "version": "1.0.0",
+  "description": "A crypto betting app.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "wasm-pack build wasm-module && vite build",
+    "build-for-app": "vite build --outDir ../app/www --emptyOutDir",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.4.9",
+    "vite-plugin-top-level-await": "^1.3.1",
+    "vite-plugin-wasm": "^3.2.2"
+  },
+  "author": "",
+  "license": "ISC"
+}
