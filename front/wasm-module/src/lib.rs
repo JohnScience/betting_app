@@ -14,5 +14,6 @@ pub fn greet() {
 
 #[wasm_bindgen(start)]
 fn main() {
+    utils::set_panic_hook();
     greet();
 }
