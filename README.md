@@ -9,7 +9,7 @@ SDD: <https://docs.google.com/document/d/1U1PDZC_sZY5XeCc71WyDy0mWSrCJs-WU7Pba7g
 
 ## Intended workflow
 
-Change directory to the `front`:
+Change directory to the `front` where nearly all the work will be done:
 
 ```console
 cd front
@@ -24,10 +24,11 @@ npm run dev
 Once you are happy with the changes, you can build the frontend part for testing it on a mobile device:
 
 ```console
-npm run build-for-app && cd ../app && cordova run <android|ios>
+npm run test-on-<android|ios>
 ```
 
 *TODO: add iOS target, possibly via [cordova-ios], and check if it works as intended.*
+*Note: testing on a mobile device takes more than a minute.*
 
 [vite]: https://vitejs.dev/
 [Apache Cordova]: https://cordova.apache.org/

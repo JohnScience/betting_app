@@ -8,6 +8,7 @@
     "dev": "wasm-pack build wasm-module && vite",
     "build": "wasm-pack build wasm-module && vite build",
     "build-for-app": "git update-index --assume-unchanged ../app/www/README.md && vite build --outDir ../app/www --emptyOutDir",
+    "test-on-android": "npm run build-for-app && cd ../app && cordova run android",
     "preview": "vite preview"
   },
   "devDependencies": {
