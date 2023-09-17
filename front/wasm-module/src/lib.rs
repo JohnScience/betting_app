@@ -2,9 +2,11 @@ mod utils;
 
 use wasm_bindgen::prelude::*;
 
+mod components;
 mod peerjs;
 
 use peerjs::Peer;
+use statue::initialize_elements;
 
 #[wasm_bindgen]
 extern "C" {
@@ -18,7 +20,23 @@ extern "C" {
 #[wasm_bindgen(start)]
 async fn main() {
     utils::set_panic_hook();
+    initialize_elements!(
+        html: "../index.html", elements: {
+            let peer_id_display = Single("#peer-id-display");
+            let copy_peer_id_icon = Single("#copy-peer-id");
+        },
+        opts: {
+            window_ret_ty: Some(T),
+            document_ret_ty: None,
+        }
+    );
+
+    let peer_id_display = components::PeerIdDisplay::new(peer_id_display);
+    let copy_peer_id_icon = components::CopyPeerIdIcon::new(copy_peer_id_icon);
+
     let peer = Peer::new().await;
-    log(&peer);
-    log_str(&peer.id());
+    let peer_id = peer.id();
+
+    peer_id_display.display(&peer_id);
+    copy_peer_id_icon.add_clipboard_overwrite_click_handler(peer_id);
 }

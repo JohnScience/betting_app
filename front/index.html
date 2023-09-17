@@ -3,9 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="vendor/css/fontawesome-free-6.4.2-web/css/fontawesome.css">
     <title>Crypto betting app</title>
   </head>
   <body>
+    <div id = "peer-id-panel">
+      <span>
+        <input id="peer-id-display" name="peer-id" type="text" readonly />
+        <i id="copy-peer-id" class="fa-regular fa-copy"></i>
+      </span> 
+    </div>
     <script src="https://unpkg.com/peerjs@1.5.0/dist/peerjs.min.js"></script>
     <script type="module" src="/wasm-module/pkg/wasm_module.js"></script>
   </body>

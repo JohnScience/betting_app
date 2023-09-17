@@ -5,6 +5,8 @@ use std::time::Duration;
 use async_std::task::sleep;
 use wasm_bindgen::prelude::*;
 
+pub struct PeerId(String);
+
 #[wasm_bindgen]
 extern "C" {
     // https://peerjs.com/docs/#peer
@@ -18,11 +20,11 @@ extern "C" {
     // Since the id is not available immediately, this method returns either null
     // or String.
     #[wasm_bindgen(method, getter, structural, js_name = id)]
-    pub fn _id(this: &Peer) -> JsValue;
+    pub fn id_as_jsvalue(this: &Peer) -> JsValue;
 
     // https://peerjs.com/docs/#peer-id
-    #[wasm_bindgen(method, getter, structural)]
-    pub fn id(this: &Peer) -> String;
+    #[wasm_bindgen(method, getter, structural, js_name = id)]
+    pub fn id_as_string(this: &Peer) -> String;
 }
 
 impl Peer {
@@ -37,7 +39,7 @@ impl Peer {
         sleep(Duration::from_millis(INITIAL_PAUSE_IN_MS)).await;
         let mut tries = 0;
         loop {
-            let id = peer._id();
+            let id = peer.id_as_jsvalue();
             if !id.is_null() {
                 break;
             }
@@ -49,19 +51,20 @@ impl Peer {
         }
         peer
     }
+
+    pub fn id(&self) -> PeerId {
+        PeerId(self.id_as_string())
+    }
 }
 
-// impl Peer {
-//     // https://peerjs.com/docs/#peerid
-//     pub fn id(&self) -> String {
-//         let vs = Object::entries(self.dyn_ref::<Object>().unwrap());
-//         log(&vs);
-//         let id = Reflect::get(self.dyn_ref::<Object>().unwrap(), &"id".into()).unwrap();
-//         log(&id);
-//         let id = js_sys::Reflect::get(&self, &"_id".into()).unwrap();
-//         log(&id);
-//         let v = Object::get_prototype_of(self.dyn_ref::<Object>().unwrap());
-//         log(&v);
-//         todo!()
-//     }
-// }
+impl PeerId {
+    pub fn to_string(self) -> String {
+        self.0
+    }
+}
+
+impl AsRef<str> for PeerId {
+    fn as_ref(&self) -> &str {
+        &self.0
+    }
+}
