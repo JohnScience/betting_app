@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="vendor/css/fontawesome-free-6.4.2-web/css/fontawesome.css">
+    <!--https://stackoverflow.com/questions/55141554/cordova-app-looking-for-unknown-favicon-ico-->
+    <link rel="icon" href="data:,">
     <title>Crypto betting app</title>
   </head>
   <body>
@@ -14,6 +16,7 @@
         <i id="copy-peer-id" class="fa-regular fa-copy"></i>
       </span> 
     </div>
+    <script src="cordova.js"></script>
     <script src="https://unpkg.com/peerjs@1.5.0/dist/peerjs.min.js"></script>
     <script type="module" src="/wasm-module/pkg/wasm_module.js"></script>
   </body>
