@@ -7,6 +7,16 @@
     font-style: normal;
 }
 
+#header {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(0, 1fr));
+    column-gap: 6vw;
+}
+
+#header > i {
+    font-size: 4vw;
+}
+
 input[type='text'] {
     border: none;
 }
@@ -39,7 +49,7 @@ label {
     font-weight: bold;
 }
 
-#copy-peer-id:hover, #add-by-peer-id:hover {
+i {
     cursor: pointer;
 }
 
