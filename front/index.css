@@ -12,6 +12,8 @@ input[type='text'] {
 }
 
 #peer-id-panel {
+    display: grid;
+    row-gap: 1vh;
     padding-top: 100px;
     padding-bottom: 100px;
     text-align: center;
@@ -32,7 +34,12 @@ input[type='text'] {
     border: 3px solid #000;
 }
 
-#copy-peer-id:hover {
+label {
+    font-size: 3.2vw;
+    font-weight: bold;
+}
+
+#copy-peer-id:hover, #add-by-peer-id:hover {
     cursor: pointer;
 }
 
@@ -43,7 +50,9 @@ input[type='text'] {
 }
 
 @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
+    label {
+        font-size: 3.6vw;
+    }
     #peer-id-panel > span > * {
         font-size: 2.5vw;
     }
