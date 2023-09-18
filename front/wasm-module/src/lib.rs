@@ -27,6 +27,8 @@ async fn main() {
             let add_by_peer_id_icon = Single("#add-by-peer-id");
             let open_menu_icon = Single("#open-menu");
             let open_contacts_icon = Single("#open-contacts");
+            let make_bet_icon = Single("#make-bet");
+            let arbitrate_icon = Single("#arbitrate");
         },
         opts: {
             window_ret_ty: Some(T),
@@ -39,6 +41,8 @@ async fn main() {
     let add_by_peer_id_icon = components::AddByPeerIdIcon::new(add_by_peer_id_icon);
     let open_menu_icon = components::OpenMenuIcon::new(open_menu_icon);
     let open_contacts_icon = components::OpenContactsIcon::new(open_contacts_icon);
+    let make_bet_icon = components::MakeBetIcon::new(make_bet_icon);
+    let arbitrate_icon = components::ArbitrateIcon::new(arbitrate_icon);
 
     let peer = Peer::new().await;
     let peer_id = peer.id();
@@ -48,4 +52,6 @@ async fn main() {
     add_by_peer_id_icon.add_click_handler();
     open_menu_icon.add_click_handler();
     open_contacts_icon.add_click_handler();
+    make_bet_icon.add_click_handler();
+    arbitrate_icon.add_click_handler();
 }
