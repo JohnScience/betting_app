@@ -29,6 +29,7 @@ async fn main() {
             let open_contacts_icon = Single("#open-contacts");
             let make_bet_icon = Single("#make-bet");
             let arbitrate_icon = Single("#arbitrate");
+            let contacts_modal = Single("#contacts-modal");
         },
         opts: {
             window_ret_ty: Some(T),
@@ -51,7 +52,7 @@ async fn main() {
     copy_peer_id_icon.add_click_handler(peer_id);
     add_by_peer_id_icon.add_click_handler();
     open_menu_icon.add_click_handler();
-    open_contacts_icon.add_click_handler();
+    open_contacts_icon.add_click_handler(contacts_modal);
     make_bet_icon.add_click_handler();
     arbitrate_icon.add_click_handler();
 }

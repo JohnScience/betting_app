@@ -71,3 +71,57 @@ i {
 #peer-id-display {
     font-size: 3vw;
 }
+
+dialog {
+    width: 80%;
+    border-radius: 5vw;
+}
+
+dialog > h1 {
+    text-align: center;
+}
+
+.contact-list {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+}
+
+.contact-info {
+    margin-left: 10px;
+    flex: 1;
+}
+
+/* Style for the Font Awesome icons */
+.contact-icons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contact-icons i {
+    margin-right: 10px;
+    font-size: 18px;
+}

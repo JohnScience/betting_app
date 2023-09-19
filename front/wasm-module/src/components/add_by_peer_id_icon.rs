@@ -13,6 +13,7 @@ impl AddByPeerIdIcon {
     pub(crate) fn add_click_handler(&self) {
         let Self(e) = self;
         add_event_listener_with_callback!(e, "click", {}, move |_event: Event| {
+            // TODO: Implement this
             alert("Not implemented yet");
         })
     }

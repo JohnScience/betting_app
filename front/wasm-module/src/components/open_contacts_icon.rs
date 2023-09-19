@@ -1,5 +1,5 @@
 use wasm_extra::add_event_listener_with_callback;
-use web_sys::{Event, HtmlElement};
+use web_sys::{Event, HtmlDialogElement, HtmlElement};
 
 use crate::alert;
 
@@ -10,11 +10,10 @@ impl OpenContactsIcon {
         Self(e)
     }
 
-    pub(crate) fn add_click_handler(&self) {
+    pub(crate) fn add_click_handler(&self, contacts_modal: HtmlDialogElement) {
         let Self(e) = self;
         add_event_listener_with_callback!(e, "click", {}, move |_event: Event| {
-            // TODO: Implement this
-            alert("Not implemented yet");
+            contacts_modal.show_modal().unwrap();
         })
     }
 }
