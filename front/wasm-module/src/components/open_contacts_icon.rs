@@ -1,8 +1,6 @@
 use wasm_extra::add_event_listener_with_callback;
 use web_sys::{Event, HtmlDialogElement, HtmlElement};
 
-use crate::alert;
-
 pub(crate) struct OpenContactsIcon(HtmlElement);
 
 impl OpenContactsIcon {

@@ -58,7 +58,7 @@ impl Peer {
 }
 
 impl PeerId {
-    pub fn to_string(self) -> String {
+    pub fn into_string(self) -> String {
         self.0
     }
 }
