@@ -1,6 +1,9 @@
 # Crypto betting app
 
-SDD: <https://docs.google.com/document/d/1U1PDZC_sZY5XeCc71WyDy0mWSrCJs-WU7Pba7gEZzaA/edit>
+Cancelled due to client's disappearance.
+
+![Screenshot (319)](https://github.com/JohnScience/betting_app/assets/16991108/fd95e74e-f7f0-46e4-a171-f15ad2b910d7)
+
 
 ## Project structure
 
