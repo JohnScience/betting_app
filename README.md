@@ -2,8 +2,7 @@
 
 Cancelled due to client's disappearance.
 
-![Screenshot (319)](https://github.com/JohnScience/betting_app/assets/16991108/fd95e74e-f7f0-46e4-a171-f15ad2b910d7)
-
+![Screenshot (319)](https://github.com/JohnScience/betting_app/assets/16991108/1324cc34-4b4d-4bfe-9940-c366975dd42b)
 
 ## Project structure
 
